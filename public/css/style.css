@@ -1,0 +1,44 @@
+body{
+	text-align: center;
+	background-color: #bdfcff;
+	color: #003c0b;
+}
+
+div {
+    display: block;
+}
+
+h1{
+	margin: auto;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    background-color: #00e2cd;
+    text-decoration: none;
+    text-overflow: none;
+    height: 50px;
+    color: initial;
+    padding: 10px;
+    margin: 10px;
+}
+
+.header{
+	margin: auto;
+	height: 80px;
+}
+
+.body{
+
+}
+
+.form{
+
+}
+
+.output{
+	font-size: 36px;
+}
