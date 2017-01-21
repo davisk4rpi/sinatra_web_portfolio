@@ -34,16 +34,27 @@ fieldset {
 
 .header{
 	margin: auto;
-	height: 80px;
 }
 
 .body{
 
 }
 
-.form{
-
+.form, .guesses {
+	display: inline-block;
 }
+
+.form {
+	vertical-align: top;
+	width: 40%;
+}
+
+.guesses {
+	align-content: left;
+	width: 30%;
+}
+
+.
 
 .output{
 	font-size: 36px;

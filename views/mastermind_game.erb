@@ -5,27 +5,28 @@
     <body>
 	    <div class="header">
 	    	<h1>Mastermind</h1>
-	    </div>
-	    <div class="guesses">
 	    	<p>
-		    	<%= guesses %>
-		    </p>
-		    <p>
-		    	<%= exact %>
-		    </p>
-		    <p>
-		    	<%= answer %>
-		    </p>
+	    		Full circles let you know how many digits you guess exactly correct.<br>Hollow circles let you know how many digits you guessed correctly, but in the wrong position<br>You only get 12 turns so dont waste them!
+	    	</p>
+	    </div>
+	    <div class="game">
+		    <div class="form">
+	    		<form action="/mastermind/game">
+	        		<h3>Take another guess!</h3>
+			    	<input type="number" name='first' min="1" max="6" />
+			    	<input type="number" name='second' min="1" max="6" />
+			    	<input type="number" name='third' min="1" max="6" />
+			    	<input type="number" name='fourth' min="1" max="6" />
+			        <input type='submit' value='Submit'/>
+	    		</form>
+	    	</div>
+		    <div class="guesses">
+			    <% guesses.each do |guess| %>
+			    	<p>
+				    	<%= guess %>
+					</p>
+		    	<% end %>
+			</div>
 		</div>
-		<div class="form">
-    		<form action="/mastermind/game">
-        		<h3>Take another guess!</h3>
-		    	<input type="number" name='first' min="1" max="6" />
-		    	<input type="number" name='second' min="1" max="6" />
-		    	<input type="number" name='third' min="1" max="6" />
-		    	<input type="number" name='fourth' min="1" max="6" />
-		        <input type='submit' value='Submit'/>
-    		</form>
-    </div>
 	</body>
 </html>		

@@ -1,12 +1,14 @@
 class MastermindGame
 
-	attr_accessor :master, :half_correct, :full_correct
+	attr_accessor :master, :half_correct, :full_correct, :turn_number
 	
 	def initialize
 		@x = 4 #length of secret code
 		@options = [1, 2, 3, 4, 5, 6]
-		@turn_number = 1
+		@turn_number = 0
 		@master = computer_generate_code
+		@full_symbol = "\u26AB"
+		@partial_symbol = "\u26AA"
 		#welcome_introduction
 	end
 
@@ -41,6 +43,7 @@ class MastermindGame
 				@full_correct += 1
 			end
 		end
+		new_turn
 	end
 
 
