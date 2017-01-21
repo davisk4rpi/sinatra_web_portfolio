@@ -20,16 +20,23 @@ get '/caesar.erb' do
 end
 
 get '/mastermind' do
+	session['game'] = MastermindGame.new
+	session["code"] = session['game'].master
 	session["guesses"] = Array.new
 	erb :mastermind
 end
 
-before '/' do
-end
-
 get '/mastermind/game' do
-	session["guesses"] << params['first'] + params['second'] + params['third'] + params['fourth']
-	erb :mastermind_game, :locals => {:guesses => session["guesses"]}
+	guess = [params['first'].to_i, 
+					 params['second'].to_i, 
+					 params['third'].to_i, 
+					 params['fourth'].to_i]
+	redirect to('/winner') if guess == session["code"] 
+	session["guesses"] << guess
+	session['game'].check_answer(guess)
+	partial = session['game'].half_correct
+	exact = session['game'].full_correct
+	erb :mastermind_game, :locals => {:guesses => session["guesses"], :answer => session["code"], :exact => exact, :partial => partial}
 end
 
 
