@@ -1,0 +1,25 @@
+<html>
+    <head>
+    	<link type="text/css" rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+	    <div class="header">
+	    	<h1>Mastermind</h1>
+	    </div>
+	    <div class="guesses">
+	    	<p>
+		    	<%= guesses %>
+		    </p>
+		</div>
+		<div class="form">
+    		<form action="/mastermind/game">
+        		<h3>Take another guess!</h3>
+		    	<input type="number" name='first' min="1" max="6" />
+		    	<input type="number" name='second' min="1" max="6" />
+		    	<input type="number" name='third' min="1" max="6" />
+		    	<input type="number" name='fourth' min="1" max="6" />
+		        <input type='submit' value='Submit'/>
+    		</form>
+    </div>
+	</body>
+</html>		

@@ -1,7 +1,10 @@
 body{
 	text-align: center;
-	background-color: #bdfcff;
-	color: #003c0b;
+	background-color: #eaeaea;
+	color: #525252;
+	width: 900px;
+	margin: auto;
+	margin-top: 20px;
 }
 
 div {
@@ -20,10 +23,13 @@ a.button {
     background-color: #00e2cd;
     text-decoration: none;
     text-overflow: none;
-    height: 50px;
     color: initial;
     padding: 10px;
     margin: 10px;
+}
+
+fieldset {
+	border: none;
 }
 
 .header{
