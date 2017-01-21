@@ -12,7 +12,7 @@ get '/' do
 	erb :index
 end
 
-get '/caesar.erb' do
+get '/caesar' do
 	string = params["string"]
 	shift = params["shift"].to_i
 	new_string = caesar_cipher(string, shift)
@@ -35,12 +35,12 @@ end
 
 get '/mastermind/loser' do 
 	string = "Ouch! You aren't as good at this as I thought."
-	erb :mastermind_end, :locals => {:response => string}
+	erb :mastermind_end, :locals => {:response => string, :winning_code => session["code"].join("")}
 end
 
 get '/mastermind/winner' do
 	string = "Hey! You are way better at this as I thought."
-	erb :mastermind_end, :locals => {:response => string}
+	erb :mastermind_end, :locals => {:response => string, :winning_code => session["code"].join("")}
 end
 
 helpers do
